@@ -1,4 +1,6 @@
-//rain
+
+int isRaining = 0;
+
 void setup()
 {
   size(400,400);
@@ -12,10 +14,12 @@ void draw()
 {
  	background(52,155,186);
  	noStroke();
-	cloud();
 	sun();
-	rainDrops();
 	ground();
+	if (isRaining==1){
+		cloud();
+		rainDrops();
+	}
 }
 void ground()
 {
@@ -66,10 +70,23 @@ void sun()
     ellipse(350,50,90,90);
 }
 
-void mousePressed()
+
+void mouseClicked() 
 {
 
+	if (isRaining == 0)
+	{
+
+		isRaining = 1;
+
+	}
+	else  {
+		isRaining = 0;
+
+	}
+
 }
+
 	
 
 
